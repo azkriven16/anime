@@ -4,10 +4,17 @@ Legend: [ ] = not started | [~] = in progress | [x] = done
 
 ---
 
+## Phase 0 — Deploy Pipeline (do this early, iterate often)
+
+- [ ] Install GitHub CLI and authenticate (`gh auth login`)
+- [ ] Create GitHub repo and push initial commit
+- [ ] Create Vercel account and connect GitHub repo
+- [ ] Confirm auto-deploy works on push to main
+
 ## Phase 1 — Project Setup
 
-- [ ] Initialize Next.js 16 app with TypeScript (`create-next-app`)
-- [ ] Install and configure Tailwind CSS
+- [x] Initialize Next.js 16 app with TypeScript (`create-next-app`)
+- [x] Install and configure Tailwind CSS
 - [ ] Install shadcn/ui and add base components
 - [ ] Set up Supabase project (cloud)
 - [ ] Connect Supabase to Next.js (env vars, client utils)
@@ -29,7 +36,8 @@ Legend: [ ] = not started | [~] = in progress | [x] = done
 
 - [ ] Set up Supabase Auth (email/password)
 - [ ] Create login page
-- [ ] Create register page
+- [ ] Create register page with Cloudflare Turnstile widget
+- [ ] Server-side Turnstile token verification on register Server Action
 - [ ] Protect routes (middleware or layout guards)
 - [ ] Create `profiles` table linked to `auth.users`
 - [ ] Show login/logout in nav
@@ -38,7 +46,8 @@ Legend: [ ] = not started | [~] = in progress | [x] = done
 
 - [ ] Create `comments` table in Supabase
 - [ ] Add RLS policies (users can only edit/delete own comments)
-- [ ] Build comment form (Server Action)
+- [ ] Build comment form (Server Action) with Cloudflare Turnstile widget
+- [ ] Server-side Turnstile token verification on comment Server Action
 - [ ] Display comments list on anime detail page
 - [ ] Support reply-to-comment (nested/threaded)
 - [ ] Delete own comment
@@ -72,4 +81,4 @@ Legend: [ ] = not started | [~] = in progress | [x] = done
 - [ ] Watchlist feature (save anime)
 - [ ] OAuth login (Google / Discord)
 - [ ] Rate limiting on API routes
-- [ ] Deploy to a hosting platform (Vercel, Fly.io, etc.)
+- [ ] Email verification flow (Supabase + custom email template)

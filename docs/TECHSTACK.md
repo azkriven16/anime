@@ -17,17 +17,23 @@
 | **Consumet API** | Anime data source | Aggregates multiple anime sources (AniList, MAL, streaming sites), self-hostable |
 | **Next.js API Routes / Server Actions** | Backend logic | Colocated with frontend, no separate server needed |
 
-## Auth
+## Auth & Security
 
 - **Supabase Auth** — email/password + optional OAuth (Google, Discord)
+- **Cloudflare Turnstile** — bot protection widget on register + comment forms (works on any host, not just Cloudflare)
+  - Client: embed the `<script>` widget, get a token on submit
+  - Server: POST the token to `https://challenges.cloudflare.com/turnstile/v0/siteverify`
+  - If verification fails, reject the request before touching the DB
 - Row Level Security (RLS) on Supabase tables to protect data at the DB level
 
-## Infrastructure
+## Hosting & Infrastructure
 
 | Tool | Purpose |
 |------|---------|
-| **Docker** | Containerize the Next.js app |
-| **docker-compose** | Orchestrate app + optional local Supabase |
+| **Vercel** | Host the Next.js app — auto-deploys on every push to main |
+| **GitHub** | Source control + triggers Vercel deployments |
+| **Docker** | Local dev + Consumet self-hosted instance |
+| **docker-compose** | Orchestrate Next.js + Consumet locally |
 
 ## Database Schema (Planned)
 
