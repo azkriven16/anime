@@ -6,10 +6,11 @@ Legend: [ ] = not started | [~] = in progress | [x] = done
 
 ## Phase 0 — Deploy Pipeline (do this early, iterate often)
 
-- [ ] Install GitHub CLI and authenticate (`gh auth login`)
-- [ ] Create GitHub repo and push initial commit
-- [ ] Create Vercel account and connect GitHub repo
-- [ ] Confirm auto-deploy works on push to main
+- [x] Create GitHub repo and push initial commit
+- [x] Create Vercel account and connect GitHub repo
+- [x] Create `dev` branch (staging) — auto-deployed as Vercel Preview
+- [ ] Confirm production deploy is live (main branch)
+- [ ] Set up env var scoping in Vercel (Production / Preview / Development)
 
 ## Phase 1 — Project Setup
 
